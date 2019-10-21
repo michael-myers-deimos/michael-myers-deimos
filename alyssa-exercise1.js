@@ -1,4 +1,6 @@
 "use strict";
+// FROM BONUS LINK: https://java.codeup.com/extra-exercises/javascript/objects/
+
 
 // Exercise 5. Create an object named profileReport and add the following methods that use the "profiles" JSON data.
 //  getProfileCount() should return the total number of profiles
@@ -916,8 +918,27 @@ var profileReport = {
         return  sum / profiles.length;
     },
     getLowestBalance: function () {
-        const lowestBal = profiles.reduce((p, c) => p.balance < c.balance ? p : c);
-        return lowestBal;
+        const lowBalance = profiles.reduce((p, c) => p.balance < c.balance ? p : c);
+        return lowBalance.balance;
+    },
+    getHighestBalance: function () {
+        const highBalance = profiles.reduce((p, c) => p.balance > c.balance ? p : c);
+        return highBalance.balance;
+    },
+    getMostFavoriteFruit: function () {
+        var countApples = 0;
+        var countStrawberries = 0;
+        var countBananas = 0;
+        for (var i = 0; i < profiles.length; i++){
+           if (profiles[i].favoriteFruit === "strawberry"){
+               countStrawberries++;
+           } else if (profiles[i].favoriteFruit === "apple"){
+               countApples++;
+           } else if (profiles[i].favoriteFruit === "banana"){
+               countBananas++;
+           }
+        }
+        return Math.max(countApples,countStrawberries, countBananas);
     }
 };
 
@@ -927,5 +948,5 @@ console.log(profileReport.getInactiveCount());
 console.log(profileReport.sumOfAllBalances());
 console.log(profileReport.getAverageBalance());
 console.log(profileReport.getLowestBalance());
-// console.log(profileReport.getHighestBalance());
-// console.log(profileReport.getMostFavoriteFruit());
+console.log(profileReport.getHighestBalance());
+console.log(profileReport.getMostFavoriteFruit());
