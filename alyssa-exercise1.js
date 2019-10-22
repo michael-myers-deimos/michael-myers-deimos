@@ -883,47 +883,47 @@ var profiles = [
 
 var profileReport = {
     getProfileCount: function () {
-        return profiles.length;
+        return "The number of users is " + profiles.length + ".";
     },
     getActiveCount: function () {
         var count = 0;
-        for (var i = 0; i < profileReport.getProfileCount(); i++){
+        for (var i = 0; i < profiles.length; i++){
             if (profiles[i].isActive === true){
                 count++;
             }
         }
-        return count;
+        return "The number of active users is " + count + ".";
     },
     getInactiveCount: function () {
         var count = 0;
-        for (var i = 0; i < profileReport.getProfileCount(); i++){
+        for (var i = 0; i < profiles.length; i++){
             if (profiles[i].isActive === false){
                 count++;
             }
         }
-        return count;
+        return "The number of inactive users is " + count + ".";
     },
     sumOfAllBalances: function () {
         var sum = 0;
         for (var i = 0; i < profiles.length; i++){
             sum += parseFloat(profiles[i].balance.replace("$", "").replace(",", ""));
         }
-        return sum;
+        return "The sum of all users' balances is " + sum + ".";
     },
     getAverageBalance: function () {
         var sum = 0;
         for (var i = 0; i < profiles.length; i++){
             sum += parseFloat(profiles[i].balance.replace("$", "").replace(",", ""));
         }
-        return  sum / profiles.length;
+        return "The average balance amongst users is " + sum / profiles.length + ".";
     },
     getLowestBalance: function () {
         const lowBalance = profiles.reduce((p, c) => p.balance < c.balance ? p : c);
-        return lowBalance.balance;
+        return "The lowest balance amongst users is " + lowBalance.balance + ".";
     },
     getHighestBalance: function () {
         const highBalance = profiles.reduce((p, c) => p.balance > c.balance ? p : c);
-        return highBalance.balance;
+        return "The highest balance amongst users is " + highBalance.balance + ".";
     },
     getMostFavoriteFruit: function () {
         var countApples = 0;
@@ -938,7 +938,67 @@ var profileReport = {
                countBananas++;
            }
         }
-        return Math.max(countApples,countStrawberries, countBananas);
+        if (Math.max(countApples,countStrawberries, countBananas) === countBananas){
+            return "The most favorite fruit is Bananas.";
+        } else if (Math.max(countApples,countStrawberries, countBananas) === countStrawberries){
+            return "The most favorite fruit is Strawberries.";
+        } else {
+            return "The most favorite fruit is Apples."
+        }
+    },
+    getLeastFavoriteFruit: function () {
+        var countApples = 0;
+        var countStrawberries = 0;
+        var countBananas = 0;
+        for (var i = 0; i < profiles.length; i++){
+            if (profiles[i].favoriteFruit === "strawberry"){
+                countStrawberries++;
+            } else if (profiles[i].favoriteFruit === "apple"){
+                countApples++;
+            } else if (profiles[i].favoriteFruit === "banana"){
+                countBananas++;
+            }
+        }
+        if (Math.min(countApples,countStrawberries, countBananas) === countBananas){
+            return "The least favorite fruit is Bananas.";
+        } else if (Math.min(countApples,countStrawberries, countBananas) === countStrawberries){
+            return "The least favorite fruit is Strawberries.";
+        } else {
+            return "The least favorite fruit is Apples."
+        }
+    },
+    getTotalNumberOfUnreadMessages: function () {
+        var sum = 0;
+        for (var i = 0; i < profiles.length; i++){
+            sum += parseFloat(profiles[i].greeting.replace(/\D/g, "").replace(",", ""));
+        }
+        return "The total number of unread messages is " + sum + ".";
+    },
+    getAverageNumberOfUnreadMessages: function () {
+        var sum = 0;
+        for (var i = 0; i < profiles.length; i++) {
+            sum += parseFloat(profiles[i].greeting.replace(/\D/g, "").replace(",", ""));
+        }
+        return "The average number of unread messages is " + sum / profiles.length + ".";
+    },
+    getAverageAge: function () {
+        var sum = 0;
+        for (var i = 0; i < profiles.length; i++){
+            sum += profiles[i].age;
+        }
+        return "The average age of the users is " + sum / profiles.length + ".";
+    },
+    getGenderCounts: function () {
+        var countFemale = 0;
+        var countMale = 0;
+        for (var i = 0; i < profiles.length; i++){
+            if (profiles[i].gender === "female"){
+                countFemale++
+            } else if (profiles[i].gender === "male"){
+                countMale++
+            }
+        }
+        return "The number of female users is " + countFemale + ". The number of male users is " + countMale + ".";
     }
 };
 
@@ -950,3 +1010,8 @@ console.log(profileReport.getAverageBalance());
 console.log(profileReport.getLowestBalance());
 console.log(profileReport.getHighestBalance());
 console.log(profileReport.getMostFavoriteFruit());
+console.log(profileReport.getLeastFavoriteFruit());
+console.log(profileReport.getTotalNumberOfUnreadMessages());
+console.log(profileReport.getAverageNumberOfUnreadMessages());
+console.log(profileReport.getAverageAge());
+console.log(profileReport.getGenderCounts());
