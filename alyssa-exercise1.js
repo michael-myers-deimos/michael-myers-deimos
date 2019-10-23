@@ -908,14 +908,14 @@ var profileReport = {
         for (var i = 0; i < profiles.length; i++){
             sum += parseFloat(profiles[i].balance.replace("$", "").replace(",", ""));
         }
-        return "The sum of all users' balances is " + sum + ".";
+        return "The sum of all users' balances is $" + sum + ".";
     },
     getAverageBalance: function () {
         var sum = 0;
         for (var i = 0; i < profiles.length; i++){
             sum += parseFloat(profiles[i].balance.replace("$", "").replace(",", ""));
         }
-        return "The average balance amongst users is " + sum / profiles.length + ".";
+        return "The average balance amongst users is $" + (sum / profiles.length).toFixed(2) + ".";
     },
     getLowestBalance: function () {
         const lowBalance = profiles.reduce((p, c) => p.balance < c.balance ? p : c);
@@ -979,14 +979,14 @@ var profileReport = {
         for (var i = 0; i < profiles.length; i++) {
             sum += parseFloat(profiles[i].greeting.replace(/\D/g, "").replace(",", ""));
         }
-        return "The average number of unread messages is " + sum / profiles.length + ".";
+        return "The average number of unread messages is " + parseInt(sum / profiles.length) + ".";
     },
     getAverageAge: function () {
         var sum = 0;
         for (var i = 0; i < profiles.length; i++){
             sum += profiles[i].age;
         }
-        return "The average age of the users is " + sum / profiles.length + ".";
+        return "The average age of the users is " + parseInt(sum / profiles.length) + ".";
     },
     getGenderCounts: function () {
         var countFemale = 0;
@@ -999,7 +999,51 @@ var profileReport = {
             }
         }
         return "The number of female users is " + countFemale + ". The number of male users is " + countMale + ".";
+    },
+    getAllCompanyNames: function () {
+        var companies = [];
+        for (var i = 0; i < profiles.length; i++){
+            companies.push(profiles[i].company)
+        }
+        return companies;
+    },
+    getMostCommonEyeColor: function () {
+        var countBlue = 0;
+        var countGreen = 0;
+        var countBrown = 0;
+        for (var i = 0; i < profiles.length; i++){
+            if (profiles[i].eyeColor === "blue"){
+                countBlue++;
+            } else if (profiles[i].eyeColor === "green"){
+                countGreen++;
+            } else if (profiles[i].eyeColor === "brown"){
+                countBrown++;
+            }
+        }
+        if (Math.max(countBlue,countGreen, countBrown) === countBlue){
+            return "The most common eye color is blue.";
+        } else if (Math.max(countBlue,countGreen, countBrown) === countGreen){
+            return "The most common eye color is green.";
+        } else {
+            return "The most common eye color is brown."
+        }
+    },
+    getBalancesForActiveAndNonActive: function () {
+        var balanceActive = 0;
+        var balanceInactive = 0;
+        for (var i = 0; i < profiles.length; i++){
+            if (profiles[i].isActive === true){
+                balanceActive += parseFloat(profiles[i].balance.replace("$", "").replace(",", ""));
+            } else if (profiles[i].isActive === false){
+                balanceInactive += parseFloat(profiles[i].balance.replace("$", "").replace(",", ""));
+            }
+        }
+        return {
+            "active-balances": balanceActive.toFixed(2),
+            "inactive-balances": balanceInactive.toFixed(2)
+        };
     }
+
 };
 
 console.log(profileReport.getProfileCount());
@@ -1015,3 +1059,6 @@ console.log(profileReport.getTotalNumberOfUnreadMessages());
 console.log(profileReport.getAverageNumberOfUnreadMessages());
 console.log(profileReport.getAverageAge());
 console.log(profileReport.getGenderCounts());
+console.log(profileReport.getAllCompanyNames());
+console.log(profileReport.getMostCommonEyeColor());
+console.log(profileReport.getBalancesForActiveAndNonActive());
