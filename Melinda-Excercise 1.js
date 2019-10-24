@@ -18,19 +18,39 @@
 // fix() - will set sterile to true if dog sterilized property is false
 // vaccinate() - takes in an argument for the name of the shot and adds a new shot with the current date to the shotRecords array
 
+// My dogs breed is a PITBULL and WEIGHS 45 lbs, the AGE of my dog is 7 years old, the COLOR of my dog is , my dog is sterilized,
+//     my dog has shot records for a "rabies shot, a lyme diesease shot and flea shot"  all dated the same day 10/20/2018.
+//
+
+
+
+function bark(){
+    return "woof"
+}
+
+function getOlder(x){
+    return x + 1
+}
+
+function fix(sterile){
+    if( sterile === true);
+    return false;
+}
+
+function vaccinate(){
+
+}
 
 var dog = {};
+dog.breed = "Pitbull";
+dog.weightInPounds =  "45lbs";
+dog.age = '' ;
+dog.color = "grey";
+dog.sterilized = false;
+dog.shotRecords = "bleh" ;
 
 
-dog.breed = "Pitbull"
-dog.weightInPounds = Math.random(1);
-dog.age = Math.random(1);
-dog.color = " grey ";
-dog.sterilized = " ";
-dog.shotRecords = " ";
-
-
-   console.log(dog);
+   console.log(" My dog is a " + dog.breed + " and weighs " + dog.weightInPounds + "." +" My " + dog.breed + "s" + " age is  " + dog.age+getOlder(5));
 
 
 
@@ -59,7 +79,7 @@ dog.shotRecords = " ";
 //         weightInPounds: Math.random(),
 //         age: Math.random(),
 //         color: " black & orange ",
-//         sterilized: "boolean",
+//         sterilized: "true",
 //         shotRecords: {
 //             Date: "7/05/2016",
 //             typeOfShot: "Lyme",
