@@ -22,35 +22,40 @@
 //     my dog has shot records for a "rabies shot, a lyme diesease shot and flea shot"  all dated the same day 10/20/2018.
 //
 
+const dog =
+    {
+        breed: ["Pitbull"],
+        weightInPounds: "45lbs",
+        age: 10,
+        color: "grey",
+        sterilized: false,
+        shotRecords: {
+            typeOfShot: "Rabies",
+            date: new Date(),
+        },
+    };
 
+dog.bark =function (){
+    console.log("Woof!");
+};
 
-function bark(){
-    return "woof"
-}
+dog.getOlder = function(){
+    // return x + 1;
+    return dog.age + 1;
+};
 
-function getOlder(x){
-    return x + 1
-}
-
-function fix(sterile){
+dog.fix = function(sterile){
     if( sterile === true);
     return false;
-}
+};
 
-function vaccinate(){
+dog.vaccinate = function(){
+    return  dog.shotRecords.typeOfShot + " and  Flea/Tick " + " on " + dog.shotRecords.date;
 
-}
+};
 
-var dog = {};
-dog.breed = "Pitbull";
-dog.weightInPounds =  "45lbs";
-dog.age = '' ;
-dog.color = "grey";
-dog.sterilized = false;
-dog.shotRecords = "bleh" ;
-
-
-   console.log(" My dog is a " + dog.breed + " and weighs " + dog.weightInPounds + "." +" My " + dog.breed + "s" + " age is  " + dog.age+getOlder(5));
+   console.log(" My dog is a " + dog.breed + " and weighs " + dog.weightInPounds + "." +" My " + dog.breed + "s" + " age is  " + dog.getOlder() + ". "
+   + "My dog has been vaccinated for " + dog.shotRecords.typeOfShot + dog.vaccinate() + ". " +  dog.bark());
 
 
 
@@ -58,81 +63,6 @@ dog.shotRecords = "bleh" ;
 
 
 
-
-
-
-// var dog = [
-//     {
-//         breed: "Pitbull",
-//         weightInPounds: Math.random(),
-//         age: Math.random(),
-//         color: " black ",
-//         sterilized: ,
-//         shotRecords: {
-//             Date: "10/20/2019",
-//             typeOfShot: "Rabies",
-//         }
-//
-//     },
-//     {
-//         breed: " Beagle ",
-//         weightInPounds: Math.random(),
-//         age: Math.random(),
-//         color: " black & orange ",
-//         sterilized: "true",
-//         shotRecords: {
-//             Date: "7/05/2016",
-//             typeOfShot: "Lyme",
-//         }
-//     }
-//
-//
-//
-// ];
-// console.log(dog);
-
-
-
-
-
-
-var books = [
-    {
-        title: "Hitchhiker's Guide to the Galaxy",
-        author: {
-            firstName: "Douglas",
-            lastName: "Adams"
-        }
-    },
-    {
-        title: "Harry Potter and the Sorcerer's Stone",
-        author: {
-            firstName: "JK",
-            lastName: "Rowling"
-        }
-    },
-    {
-        title: "Garfield Loses His Feet",
-        author: {
-            firstName: "Douglas",
-            lastName: "Adams"
-        }
-    },
-    {
-        title: "Traction",
-        author: {
-            firstName: "Douglas",
-            lastName: "Adams"
-        }
-    },
-    {
-        title: "Frankenstein",
-        author: {
-            firstName: "Douglas",
-            lastName: "Adams"
-        }
-    }
-];
 
 
 
