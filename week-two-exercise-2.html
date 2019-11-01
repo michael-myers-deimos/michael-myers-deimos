@@ -59,6 +59,7 @@
 <script>
 
 
+    //set two variables that targets the left picture and the picture in the center and swaps them
     $('#leftSwap').click(function() {
         var oldClass = $(this).prev().attr("class").split(" ")[1];
         var newClass = $(this).parent().next().children().first().attr("class").split(" ")[1];
@@ -66,6 +67,7 @@
         $(this).prev().attr("class", "frame " + newClass)
     });
 
+    //set two additional variables that randomly swaps the middle picture with the left or right picture
     $('#middleSwap').click(function() {
         var randomChoice = Math.floor(Math.random() * (1 + 1));
         var frameChoice = (randomChoice) ? $(this).parent().prev() : $(this).parent().next();
