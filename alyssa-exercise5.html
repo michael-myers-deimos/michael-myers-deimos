@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 5</title>
+</head>
+<body>
+<script>
+    // https://www.learnhowtoprogram.com/intro-to-programming-evening/arrays-looping-d400698b-76d2-43e3-9b73-f88fc423afee/practice-foreach-and-map
+    // Build a Deck
+    // Use a forEach() loop within another forEach() loop to build an array representing a deck of cards. A deck consists of 52 cards - 13 ranks in each of 4 suits.
+    //     Then, display a list of every card in the deck. (Hint: Each element of the array should read something like "ace of spades" or "4 of hearts").
+    //
+    function deck(cards) {
+        var suits = ['clubs', 'spades', 'hearts', 'diamonds'];
+        var numbers = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+        var newDeck = [];
+        suits.forEach(function (suit) {
+            numbers.forEach(function (number) {
+                var card =  number + " of " + suit;
+                newDeck.push(card);
+            })
+        });
+        return newDeck;
+    }
+
+    console.log(deck());
+</script>
+</body>
+</html>
