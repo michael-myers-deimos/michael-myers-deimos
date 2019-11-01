@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 6</title>
+</head>
+<body>
+<script>
+    var cars = [
+        {
+            make: 'Volvo',
+            color: 'red',
+            year: 1996,
+            isDirty: true
+        },
+        {
+            make: 'Toyota',
+            color: 'black',
+            year: 2004,
+            isDirty: false
+        },
+        {
+            make: 'Ford',
+            color: 'white',
+            year: 2007,
+            isDirty: true
+        }
+    ];
+
+    function washCars(cars){
+        cars.forEach(function (car) {
+            if (car.isDirty === true){
+                car.isDirty = false;
+            }
+        });
+        return cars;
+    }
+
+    console.log(washCars(cars));
+
+</script>
+</body>
+</html>
