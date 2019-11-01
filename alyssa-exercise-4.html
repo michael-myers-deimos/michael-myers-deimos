@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 4</title>
+</head>
+<body>
+<script>
+
+//https://java.codeup.com/extra-exercises/javascript/objects/
+    // Exercise 2. Use the following data to create an object named salesReport.
+    //     The object should have the following properties:
+    //       title, date, office, and employees.
+    //       the employees property should hold an array of objects.
+    //       each employee should be represented by an object with the following properties:
+    //         employee-number, first-name, last-name, sales-units
+    //
+    // Monthly Sales Report
+    // Date: 03-17-2015
+    // Office: Codeup
+    // ===================================================
+    // Employee Number, First Name, Last Name, Sales Units
+    // ***************************************************
+    // 1, Jane, Janeway, 3
+    // 3, Tricia, Triciason, 5
+    // 4, Jeannette, Jeanson, 4
+    // 5, Charles Emmerson III, Winchester, 2
+    // 6, Chet, Chedderson, 8
+    // 7, Chaiam, Chaiamson, 12
+    // 8, Dale, Dalesinger, 1
+    // 9, Zig, Ziglar, 50
+    // 10, Henry, Kissinger, 1
+    // 11, Arthur Herbert, Fonzarelli, 23
+    // 12, Betty, Boop, 67
+
+    // Exercise 3. On the salesReport object you made, add the following methods.
+    // getEmployeeCount() should return the total number of employees
+    // getTotalNumberOfSales() should return the total number of units sold
+    // getAverageSalesPerEmployee() should return the average units sold per employee
+    var salesReport = {
+        title: "Monthly Sales Report",
+        date: "03-17-2015",
+        office: "Codeup",
+        employees: [
+            {
+                employeeNumber: 1,
+                firstName: "Jane",
+                lastName: "Janeway",
+                salesUnits: 3
+            },
+            {
+                employeeNumber: 3,
+                firstName: "Tricia",
+                lastName: "Triciason",
+                salesUnits: 5
+            },
+            {
+                employeeNumber: 4,
+                firstName: "Jeannette",
+                lastName: "Jeanson",
+                salesUnits: 4
+            },
+            {
+                employeeNumber: 5,
+                firstName: "Charles Emmerson III",
+                lastName: "Winchester",
+                salesUnits: 2
+            },
+            {
+                employeeNumber: 6,
+                firstName: "Chet",
+                lastName: "Chedderson",
+                salesUnits: 8
+            },
+            {
+                employeeNumber: 7,
+                firstName: "Chaiam",
+                lastName: "Chaiamson",
+                salesUnits: 12
+            },
+            {
+                employeeNumber: 8,
+                firstName: "Dale",
+                lastName: "Dalesinger",
+                salesUnits: 1
+            },
+            {
+                employeeNumber: 9,
+                firstName: "Zig",
+                lastName: "Ziglar",
+                salesUnits: 50
+            },
+            {
+                employeeNumber: 10,
+                firstName: "Henry",
+                lastName: "Kissinger",
+                salesUnits: 1
+            },
+            {
+                employeeNumber: 11,
+                firstName: "Arthur",
+                lastName: "Herbert",
+                salesUnits: 23
+            },
+            {
+                employeeNumber: 12,
+                firstName: "Betty",
+                lastName: "Boop",
+                salesUnits: 67
+            }
+        ],
+    };
+
+    console.log(salesReport);
+
+
+    salesReport.getEmployeeCount = function () {
+        console.log("Employee count is: " + this.employees.length + ".");
+    };
+
+    console.log(salesReport.getEmployeeCount());
+
+    salesReport.employees.getTotalNumberOfSales = function () {
+        var totalSales = 0;
+        for (var i = 0; i < salesReport.employees.length; i++){
+            totalSales += salesReport.employees[i].salesUnits;
+        }
+        return "The total sales revenue is $" + totalSales + ".";
+    };
+
+    console.log(salesReport.employees.getTotalNumberOfSales());
+
+    salesReport.employees.getAverageSalesPerEmployee = function () {
+        var employeeCount = 0;
+        var totalSales = 0;
+        for (var i = 0; i < salesReport.employees.length; i++){
+            totalSales += salesReport.employees[i].salesUnits;
+        }
+        employeeCount = salesReport.employees.length;
+        return "The average sale per employee is $" + totalSales / employeeCount + ".";
+    };
+
+    console.log(salesReport.employees.getAverageSalesPerEmployee());
+</script>
+</body>
+</html>
