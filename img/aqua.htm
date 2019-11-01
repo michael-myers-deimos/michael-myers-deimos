@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="csrf-name" content="csrf5dbbf67d922e0">
+	<meta name="csrf-value" content="a7241be781db4679da5f3c933660a534">
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>	<link rel="dns-prefetch" href="https://cdn.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn1.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn2.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn3.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn4.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn5.vectorstock.com">
+
+	<title>Air symbol of aquarius zodiac sign horoscope Vector Image</title>
+	<meta name="description" content="Air symbol of Aquarius zodiac sign, horoscope, vector art and illustration. Star constellation. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions. ID #15135077.">
+	
+	<meta property="og:site_name" content="VectorStock">
+	<meta property="og:type" content="product">
+	<meta property="og:url" content="https://www.vectorstock.com/royalty-free-vector/air-symbol-of-aquarius-zodiac-sign-horoscope-vector-15135077">
+	<meta property="og:title" content="Air symbol of aquarius zodiac sign horoscope vector image on VectorStock">
+	<meta property="og:description" content="Air symbol of Aquarius zodiac sign, horoscope, vector art and illustration. Star constellation. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+	<meta property="og:image" content="https://cdn3.vectorstock.com/i/1000x1000/50/77/air-symbol-of-aquarius-zodiac-sign-horoscope-vector-15135077.jpg">
+	<meta property="og:image:url" content="https://cdn3.vectorstock.com/i/1000x1000/50/77/air-symbol-of-aquarius-zodiac-sign-horoscope-vector-15135077.jpg">
+	<meta property="og:image:secure_url" content="https://cdn3.vectorstock.com/i/1000x1000/50/77/air-symbol-of-aquarius-zodiac-sign-horoscope-vector-15135077.jpg">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1000">
+	<meta property="og:price:amount" content="0.69">
+	<meta property="og:price:currency" content="USD">
+	<meta property="product:price:amount" content="0.69">
+	<meta property="product:price:currency" content="USD">
+
+	<meta property="fb:app_id" content="241100862642313">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="https://www.vectorstock.com/royalty-free-vector/air-symbol-of-aquarius-zodiac-sign-horoscope-vector-15135077">
+	<meta name="twitter:title" content="Air symbol of aquarius zodiac sign horoscope vector image">
+	<meta name="twitter:description" content="Air symbol of Aquarius zodiac sign, horoscope, vector art and illustration. Star constellation.">
+	<meta name="twitter:image" content="https://cdn3.vectorstock.com/i/thumb-large/50/77/air-symbol-of-aquarius-zodiac-sign-horoscope-vector-15135077.jpg">
+	<meta name="twitter:image:width" content="238">
+	<meta name="twitter:image:height" content="250">
+	<meta name="twitter:site" content="@VectorStock">
+
+	<link rel="canonical" href="https://www.vectorstock.com/royalty-free-vector/air-symbol-of-aquarius-zodiac-sign-horoscope-vector-15135077">
+	<link rel="shortcut icon" href="https://cdn.vectorstock.com/img/icons/favicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" href="//cdn.vectorstock.com/cache/common1571873681.min.css">
+	<link rel="stylesheet" href="//cdn.vectorstock.com/cache/vector1571873681.min.css">
+	<script src="//cdn.vectorstock.com/cache/common1572394458.min.js"></script>
+	<script src="//cdn.vectorstock.com/cache/vector1572394458.min.js"></script>
+<!-- Analytics --><script type="text/javascript">// Load GA script
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+// Setup
+ga('create', 'UA-2180430-2', 'none');
+ga('require', 'linkid', 'linkid.js');
+ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<!-- Top header -->
+<header>
+	<nav class="top">
+		<figure>
+			<a href="/" title="VectorStock&reg;">VectorStock&reg;</a>
+		</figure>
+
+		<div class="grid">
+			<form id="searchbox"
+				 class="empty">
+				<div class="wrap">
+					<fieldset>
+						<div class="contents">
+							<div class="tags">
+								<ul></ul>
+							</div>
+							<div class="input">
+								<input type="text" name="input" autocomplete="off" autocapitalize="none" spellcheck="true" value="" placeholder="Search…" maxlength="50" autofocus>
+								<button type="button" data-action="clear">×</button>
+							</div>
+
+							<input type="hidden" name="category" value="">
+							<input type="hidden" name="custom_srp" value="">
+							<input type="hidden" name="artist" value="">
+							<input type="hidden" name="similar" value="">
+						</div>
+					</fieldset>
+
+					<button type="submit">
+						<span class="icon">Search</span>
+					</button>
+				</div>
+			</form>
+			<ul>
+					<li><a href="/royalty-free-vectors">All Vectors</a></li>
+					<li><a href="/free-vectors">Free Vectors</a></li>
+				</ul>
+		</div>
+
+		<div class="aside">
+			<ul>
+				<li><a href="/popular-categories" title="Popular Categories">Popular
+						Categories</a></li>
+					<li><button type="button" data-action="signup">Sign Up</button></li>
+				</ul>
+		</div>
+
+		<div id="mobilenav-icon">
+			<span></span><span></span><span></span><span></span>
+		</div>
+	</nav>
+
+	<!-- Submenu -->
+		<nav id="searchrelated"></nav>	
+
+		<!-- Mobile menu -->
+	<div id="mobilenav-menu">
+		<div>
+			<div class="group">
+				<h4>Browse</h4>
+				<ul>
+					<li><a href="/royalty-free-vectors">All Vectors</a></li>
+					<li><a href="/free-vectors">Free Vectors</a></li>
+				</ul>
+			</div>
+			<div class="group">
+				<h4>Account</h4>
+				<ul>
+					<li class="account">
+							<ul>
+								<li><a href="/signup">Sign Up</a></li>
+								<li data-action="login"><a href="/?login=1">Login…</a></li>
+							</ul>
+						</li>
+				</ul>
+				<form method="get" action="/auth/logout" class="logout">
+					<input type="hidden" name="logout" value="1">
+				</form>
+			</div>
+			<div class="group">
+				<h4>Help</h4>
+				<ul>
+					<li><a href="/faq"><abbr title="Frequently Asked Questions">FAQs</abbr></a></li>
+					<li><a href="/contact">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+		<!-- Account Menu Tabs -->
+		<aside id="nav_sidebar" class="tabs tabsDark">
+
+			<nav>
+				<ul role="tablist">
+					<li data-tab-id="signup" class=""><span role="tab"><span>Sign Up</span></span></li>
+					<li data-tab-id="login" class="selected"><span role="tab"><span>Log In</span></span></li>
+				</ul>
+			</nav>
+
+			<section id="sb_signup" data-tab-id="signup" class="">
+				<div class="primary">
+					<p>New to VectorStock?</p>
+					<p><em>We're the largest royalty-free, vector-only stock agency in the world.</em></p>
+					<p>Every week we add new premium graphics by the thousands.</p>
+				</div>
+				<div class="secondary">
+					<p>Whether you're a global ad&nbsp;agency or a freelance graphic designer, we have the vector graphics to make your project come to life.</p>
+					<p>Buy Vectors, sell Vectors or both. <a href="/signup">Sign up now, it’s free.</a></p>
+				</div>
+				<div class="footer">
+					<button class="master">
+						<span class="title">Sign Up...</span>
+						<span class="value">
+							<span class="symbol signup"></span>
+						</span>
+					</button>
+				</div>
+			</section>
+
+			<section id="sb_login" data-tab-id="login" class="selected">
+				<form action="/auth/login" method="post">
+
+
+					<fieldset class="">
+						<label for="vs_username">Email / Username</label>
+						<div class="textfield">
+							<input type="text" id="vs_username" name="vs_username" value="" autocomplete="on" tabindex="1">
+						</div>
+					</fieldset>
+					<fieldset class="">
+						<label for="vs_password">Password</label>
+						<button type="button" class="forgot">Forgot Password</button>
+						<div class="textfield">
+							<input type="password" id="vs_password" name="vs_password" value="" autocomplete="on" tabindex="2"  maxlength="20">
+						</div>
+					</fieldset>
+					<fieldset>
+						<div class="checkbox checked">
+							<label class="selected" for="vs_remember">
+								<span class="title">Stay Logged In</span>
+								<span class="icon"></span>
+								<input type="checkbox" id="vs_remember" name="vs_remember" value="yes" tabindex="3" checked>
+							</label>
+						</div>
+					</fieldset>
+
+
+					<button type="submit" tabindex="4">Log In</button>
+				</form>
+				<div class="alternatives">
+					<h6>Or Login With</h6>
+					<ul>
+						<li class="gp"><a href="/">
+							<span class="title">Google</span>
+							<span class="icon"></span>
+						</a></li>
+						<li class="fb"><a href="/">
+							<span class="title">Facebook</span>
+							<span class="icon"></span>
+						</a></li>
+					</ul>
+				</div>
+
+				
+			</section>
+		</aside>
+
+	<!-- Page -->
+	<article>
+		<section id="vs-asset">
+
+			<!-- Aside -->
+			<div class="aside">
+				<ol itemscope itemtype="http://schema.org/BreadcrumbList">
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemtype="http://schema.org/Thing" itemprop="item" href="/royalty-free-vectors">
+							<span itemprop="name">Royalty Free Vectors</span>
+						</a>
+						<meta itemprop="position" content="1" />
+					</li>
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemtype="http://schema.org/Thing" itemprop="item" href="/royalty-free-vectors/sign-zodiac-aquarius-vectors">
+							<span itemprop="name">Sign Zodiac Aquarius Vectors</span>
+						</a>
+						<meta itemprop="position" content="2" />
+					</li>
+				</ol>
+
+				<h1>
+					Air symbol of aquarius zodiac sign horoscope vector&nbsp;image														</h1>
+
+				<figure style="padding-top: 99%;" class="target">
+					<div class="highres" data-src="https://cdn3.vectorstock.com/i/1000x1000/50/77/air-symbol-of-aquarius-zodiac-sign-horoscope-vector-15135077.jpg">
+						<noscript><img src="https://cdn3.vectorstock.com/i/1000x1000/50/77/air-symbol-of-aquarius-zodiac-sign-horoscope-vector-15135077.jpg" title="Air symbol of aquarius zodiac sign horoscope vector image" alt="Air symbol of aquarius zodiac sign horoscope"></noscript>
+					</div>
+					<div class="lowres">
+						<img src="https://cdn3.vectorstock.com/i/thumbs/50/77/air-symbol-of-aquarius-zodiac-sign-horoscope-vector-15135077.jpg" title="Air symbol of aquarius zodiac sign horoscope vector image" alt="Air symbol of aquarius zodiac sign horoscope">
+					</div>
+					<div class="overlay"></div>
+				</figure>
+
+				<form data-loggedin="0" data-licenses="2" data-license="standard" data-status="" data-payments="3" data-payment="single-image">
+					<input type="hidden" id="vector_id" value="15135077">
+					<input type="hidden" id="vector_title" value="Air symbol of aquarius zodiac sign horoscope">
+					<input type="hidden" id="vector_description" value="Air symbol of Aquarius zodiac sign, horoscope, vector art and illustration. Star constellation. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+					<input type="hidden" id="vector_url" value="https://www.vectorstock.com/royalty-free-vector/air-symbol-of-aquarius-zodiac-sign-horoscope-vector-15135077">
+					<input type="hidden" id="vector_media" value="https://cdn3.vectorstock.com/i/1000x1000/50/77/air-symbol-of-aquarius-zodiac-sign-horoscope-vector-15135077.jpg">
+					<input type="hidden" id="vector_ratio" value="1">
+					<input type="hidden" id="vector_license_status" value="">
+					<input type="hidden" id="artist_name" value="mrFox11">
+					<input type="hidden" id="account_user" value="0">
+
+					<div class="options">
+						<!--
+						-- OPTION: License type
+						-->
+						<div class="option" data-type="license" data-license="standard" data-licenses="2">
+							<h6><span class="type">License</span><a href="/faq/members/standard-license">Learn More</a></h6>
+							<div class="optgroup radgroup">
+								<fieldset>
+									<label for="f_license_standard" class="checked">
+										<input type="radio" id="f_license_standard" name="license" value="standard" checked="checked" tabindex="2">
+										<span class="label">Standard</span>
+										<span class="descr">For Print, Advertising, Design</span>
+									</label>
+								</fieldset>
+								<fieldset>
+									<label for="f_license_expanded">
+										<input type="radio" id="f_license_expanded" name="license" value="expanded" tabindex="4">
+										<span class="label">Expanded</span>
+										<span class="descr">For Resale &amp; Reproduction</span>
+									</label>
+								</fieldset>
+							</div>
+
+							<div class="help">
+								<p>The license type determines how you can use this image.</p>
+								<table>
+									<thead>
+										<tr>
+											<th></th>
+																						<th data-license="standard">Std.</th>																						<th data-license="expanded">Exp.</th>										</tr>
+									</thead>
+									<tbody>
+																				<tr>
+											<td>Print / Editorial</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Graphic Design</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Web Design</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Social Media</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Edit &amp; Modify</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Multi-user</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Resale Items</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Unlimited Runs</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<!--
+						-- OPTION: Payment options (Standard)
+						-->
+						<div class="option" data-type="payment" data-license="standard">
+							<h6><span class="type">Ways to Buy</span><a href="/faq/members/ways-to-buy">Compare</a></h6>
+							<div class="optgroup radgroup" data-license="standard">
+																<fieldset>
+									<label for="f_payment_standard_single-image" class="checked" >
+										<input type="radio" id="f_payment_standard_single-image" name="payment_standard" data-cost="14.99" value="single-image"  checked="checked" tabindex="5">
+										<span class="label">Single Image</span>
+										<span class="value"><small>$</small><var>14.99</var></span>
+									</label>
+								</fieldset>
+																<fieldset>
+									<label for="f_payment_standard_credits">
+										<input type="radio" id="f_payment_standard_credits" name="payment_standard" data-cost="1" value="credits" tabindex="6">
+										<span class="label">Credits</span>
+										<span class="value"><small>$</small><var>1.00</var></span>
+									</label>
+								</fieldset>
+								<fieldset>
+									<label for="f_payment_standard_subscription">
+										<input type="radio" id="f_payment_standard_subscription" name="payment_standard" data-cost="1" value="subscription" tabindex="7">
+										<span class="label">Subscription</span>
+										<span class="value"><small>$</small><var>0.69</var></span>
+									</label>
+								</fieldset>
+							</div>
+							<div class="help">
+								<p>There are three ways to pay for Standard licenses. Prices are $<abbr title="United States Dollars">US</abbr>.</p>
+
+								<table>
+									<thead>
+										<tr>
+											<th>Pay with</th>
+											<th>Image Price</th>
+										</tr>
+									</thead>
+									<tbody>
+																				<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Single Image</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>14.99</span>
+												</span>
+												<span class="byline">One-time payment</span>
+											</td>
+										</tr>
+																				<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Pay-As-You-Go Credits</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>1</span>
+												</span>
+												<span class="byline">Download images on-demand (1 credit = $1). Minimum purchase of 30.</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Subscription Plan</span>
+													<span class="dm"></span>
+													<span class="dd"><em>From</em> 69c</span>
+												</span>
+												<span class="byline">Choose a monthly plan. Unused downloads automatically roll into following month.</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!--
+						-- OPTION: Payment options (Expanded)
+						-->
+						<div class="option" data-type="payment" data-license="expanded">
+							<h6><span class="type">Ways to Buy</span><a href="/faq/members/ways-to-buy">Compare</a></h6>
+							<div class="optgroup radgroup" data-license="expanded">
+																<fieldset>
+									<label for="f_payment_expanded_single-image" class="checked">
+										<input type="radio" id="f_payment_expanded_single-image" name="payment_expanded" data-cost="29.99" value="single-image" checked="checked" tabindex="8">
+										<span class="label">Single Image</span>
+										<span class="value"><small>$</small><var>29.99</var></span>
+									</label>
+								</fieldset>
+																<fieldset>
+									<label for="f_payment_expanded_credits">
+										<input type="radio" id="f_payment_expanded_credits" name="payment_expanded" data-cost="30" value="credits" tabindex="9">
+										<span class="label">Credits</span>
+										<span class="value"><small>$</small><var>30.00</var></span>
+									</label>
+								</fieldset>
+							</div>
+														<div class="help">
+								<p>There are two ways to pay for Expanded licenses. Prices are $<abbr title="United States Dollars">US</abbr>.</p>
+
+								<table>
+									<thead>
+										<tr>
+											<th>Pay with</th>
+											<th>Cost per Image</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Single Image</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>29.99</span>
+												</span>
+												<span class="byline">One-off payment, no signup needed.</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Credits</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>30</span>
+												</span>
+												<span class="byline">Download images on-demand (1 credit = $1).</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+													</div>
+					</div>
+					<div class="download">
+						<button type="button" data-action="download">
+							<span class="label">Download Image</span>
+							<span class="icon"></span>
+						</button>
+						<h6><span class="label">Files Included</span></h6>
+						<div class="help">
+							<span class="loading"><span class="label">Loading Details...</span></span>
+						</div>
+					</div>
+					<div class="download_options">
+						<div class="wrap">
+							<div class="optgroup" data-action="download">
+								<span class="header">Download File/s:</span>
+								<div class="dropdown" data-value="zip">
+									<div class="display">
+										<span class="label"><strong>ZIP Archive</strong></span>
+										<span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M10.6,12.8 15,17.2 19.4,12.8"/></svg></span>
+									</div>
+									<div class="select">
+										<select>
+											<optgroup label="All Files">
+												<option value="zip" data-label="ZIP Archive" data-details="" data-url="" selected="selected">ZIP Archive</option>											</optgroup>
+											<optgroup label="Image">
+												<option value="jpg" data-label="High-res JPG" data-details="300 DPI+" data-url="">High-res JPG (300 DPI+)</option>												<option value="png" data-label="High-res PNG" data-details="300 DPI+" data-url="">High-res PNG (300 DPI+)</option>											</optgroup>
+											<optgroup label="Vector">
+												<option value="ai" data-label="Adobe Illustrator" data-details="v10+" data-url="">Adobe Illustrator (v10+)</option>												<option value="eps" data-label="Vector EPS" data-details="v8+" data-url="">Vector EPS (v8+)</option>												<option value="pdf" data-label="Vector PDF" data-details="" data-url="">Vector PDF</option>											</optgroup>
+										</select>
+									</div>
+								</div>
+								<button type="button" data-action="download_file">
+									<span class="label">Download ZIP</span>
+									<span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M23.6,21.2 23.6,9.5 16.4,9.5 16.4,21.3 10.8,21.3 11,21.5 20,30.5 29.2,21.3"/></svg></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<!-- Image -->
+			<div class="image">
+				<figure data-orientation="square" style="padding-top: 99%;" class="target">
+					<div class="highres" data-src="https://cdn3.vectorstock.com/i/1000x1000/50/77/air-symbol-of-aquarius-zodiac-sign-horoscope-vector-15135077.jpg">
+						<noscript><img src="https://cdn3.vectorstock.com/i/1000x1000/50/77/air-symbol-of-aquarius-zodiac-sign-horoscope-vector-15135077.jpg" title="Air symbol of aquarius zodiac sign horoscope vector image" alt="Air symbol of aquarius zodiac sign horoscope"></noscript>
+					</div>
+					<div class="lowres">
+						<img src="https://cdn3.vectorstock.com/i/thumbs/50/77/air-symbol-of-aquarius-zodiac-sign-horoscope-vector-15135077.jpg" title="Air symbol of aquarius zodiac sign horoscope vector image" alt="Air symbol of aquarius zodiac sign horoscope">
+					</div>
+					<div class="overlay"></div>
+					<div class="panels">
+						<div class="share">
+							<h4>Share on</h4>
+							<ul>
+								<li class="pinterest"><button type="button" data-action="pinterest"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M12.5,0C5.6,0,0,5.6,0,12.5c0,5.12,3.08,9.52,7.48,11.45c-0.03-0.87-0.01-1.92,0.22-2.87c0.24-1.01,1.61-6.81,1.61-6.81s-0.4-0.8-0.4-1.98c0-1.85,1.07-3.24,2.41-3.24c1.14,0,1.69,0.85,1.69,1.88c0,1.14-0.73,2.85-1.1,4.44c-0.31,1.33,0.67,2.41,1.97,2.41c2.37,0,3.96-3.04,3.96-6.65c0-2.74-1.85-4.79-5.2-4.79c-3.79,0-6.15,2.83-6.15,5.99c0,1.09,0.32,1.86,0.82,2.45c0.23,0.27,0.26,0.38,0.18,0.7c-0.06,0.23-0.2,0.78-0.25,1c-0.08,0.32-0.34,0.43-0.63,0.31c-1.75-0.71-2.56-2.62-2.56-4.77c0-3.55,3-7.81,8.93-7.81c4.77,0,7.91,3.45,7.91,7.16c0,4.9-2.73,8.57-6.75,8.57c-1.35,0-2.62-0.73-3.05-1.56c0,0-0.73,2.88-0.88,3.44c-0.27,0.96-0.78,1.93-1.26,2.68C10.08,24.82,11.27,25,12.5,25C19.4,25,25,19.4,25,12.5S19.4,0,12.5,0L12.5,0z"/></svg></span><span class="label">Pinterest</span></span></button></li>
+								<li class="facebook"><button type="button" data-action="facebook"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M22.44,1H2.56C1.7,1,1,1.7,1,2.56v19.88C1,23.3,1.7,24,2.56,24h10.41v-8.89H9.98v-3.46h2.99V9.1c0-2.96,1.81-4.58,4.45-4.58c1.27,0,2.35,0.09,2.67,0.14v3.1l-1.83,0c-1.44,0-1.72,0.68-1.72,1.69v2.21h3.43l-0.45,3.46h-2.98V24h5.89C23.3,24,24,23.3,24,22.44V2.56C24,1.7,23.3,1,22.44,1z"/></svg></span><span class="label">Facebook</span></span></button></li>
+								<li class="twitter"><button type="button" data-action="twitter"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M7.86,22.5c9.43,0,14.59-7.69,14.59-14.37c0-0.22,0-0.44-0.01-0.65c1-0.71,1.87-1.6,2.56-2.61c-0.92,0.4-1.91,0.67-2.95,0.79c1.06-0.62,1.87-1.61,2.26-2.79c-0.99,0.58-2.09,1-3.26,1.23c-0.94-0.98-2.27-1.6-3.74-1.6c-2.83,0-5.13,2.26-5.13,5.05c0,0.4,0.05,0.78,0.13,1.15C8.05,8.49,4.27,6.48,1.74,3.42C1.3,4.17,1.05,5.04,1.05,5.96c0,1.75,0.91,3.3,2.28,4.2C2.49,10.14,1.7,9.91,1,9.53C1,9.55,1,9.58,1,9.6c0,2.45,1.77,4.49,4.11,4.95c-0.43,0.12-0.88,0.18-1.35,0.18c-0.33,0-0.65-0.03-0.96-0.09c0.65,2.01,2.55,3.47,4.79,3.51C5.84,19.5,3.63,20.3,1.22,20.3c-0.41,0-0.82-0.02-1.22-0.07C2.27,21.66,4.97,22.5,7.86,22.5"/></svg></span><span class="label">Twitter</span></span></button></li>
+							</ul>
+						</div>
+						<div class="composite">
+							<button type="button" data-action="download"><span><span class="label">Download JPG Preview Image</span></span></button>
+						</div>
+					</div>
+				</figure>
+				<div class="details">
+					<div class="meta">
+						<ul>
+							<li class="meta-id">
+								<dl><dt>Image ID</dt><dd>15135077</dd></dl>
+							</li>
+							<li class="meta-artist">
+								<dl>
+									<dt>Artist</dt>
+									<dd><a href="/royalty-free-vectors/vectors-by_mrFox11" rel="nofollow">mrFox11</a><button type="button" data-action="follow" title="Follow Artists that you like to create a newsfeed of their recent images."><span class="label">Follow</span></button></dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+					<div class="options" data-total="2">
+						<ul>
+							<li class="opt-like">
+								<button type="button" data-action="like" data-count="0"><span class="icon">&hearts;</span><span class="label">Like</span><span class="tally"></span></button>
+							</li>
+							<li class="opt-cart">
+								<button type="button" data-action="cart"><span class="icon">+</span><span class="label">Cart</span></button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- Metadata -->
+			<div class="metadata">
+				<div itemtype="http://schema.org/Product" itemscope>
+					<meta itemprop="sku" content="15135077">
+					<meta itemprop="productID" content="15135077">
+					<meta itemprop="name" content="Air symbol of aquarius zodiac sign horoscope">
+					<meta itemprop="description" content="Air symbol of Aquarius zodiac sign, horoscope, vector art and illustration. Star constellation. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+					<meta itemprop="releaseDate" content="2017-06-05">
+					<link itemprop="image" href="https://cdn3.vectorstock.com/i/1000x1000/50/77/air-symbol-of-aquarius-zodiac-sign-horoscope-vector-15135077.jpg">
+					
+					<div itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
+						<meta itemprop="name" content="VectorStock">
+					</div>
+					<div itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
+						<link itemprop="url" href="https://www.vectorstock.com/royalty-free-vector/air-symbol-of-aquarius-zodiac-sign-horoscope-vector-15135077">
+						<meta itemprop="availability" content="https://schema.org/InStock">
+						<div itemprop="price">0.69</div>
+						<div itemprop="priceCurrency">USD</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section id="vs-related">
+			<div id="group-similar" class="group">
+				<h6><span class="icon"></span><strong>Similar Images</strong></h6>
+
+				<div class="gallery large">
+					<ul>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/87/86/golden-aquarius-sign-vector-20988786.jpg"><a href="//www.vectorstock.com/royalty-free-vector/golden-aquarius-sign-vector-20988786" title="golden aquarius sign vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/87/86/golden-aquarius-sign-vector-20988786.jpg" title="golden aquarius sign" alt="golden aquarius sign vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/95/34/aquarius-zodiac-sign-on-a-night-sky-vector-26349534.jpg"><a href="//www.vectorstock.com/royalty-free-vector/aquarius-zodiac-sign-on-a-night-sky-vector-26349534" title="aquarius zodiac sign on a night sky vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/95/34/aquarius-zodiac-sign-on-a-night-sky-vector-26349534.jpg" title="aquarius zodiac sign on a night sky" alt="aquarius zodiac sign on a night sky vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/47/92/the-aquarius-constellation-vector-22074792.jpg"><a href="//www.vectorstock.com/royalty-free-vector/the-aquarius-constellation-vector-22074792" title="the aquarius constellation vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/47/92/the-aquarius-constellation-vector-22074792.jpg" title="the aquarius constellation" alt="the aquarius constellation vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/24/65/aquarius-vector-21282465.jpg"><a href="//www.vectorstock.com/royalty-free-vector/aquarius-vector-21282465" title="aquarius vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/24/65/aquarius-vector-21282465.jpg" title="aquarius" alt="aquarius vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/83/66/constellation-aquarius-zodiac-sign-vector-21068366.jpg"><a href="//www.vectorstock.com/royalty-free-vector/constellation-aquarius-zodiac-sign-vector-21068366" title="constellation aquarius zodiac sign vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/83/66/constellation-aquarius-zodiac-sign-vector-21068366.jpg" title="constellation aquarius zodiac sign" alt="constellation aquarius zodiac sign vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/17/19/constellations-set-twelve-signs-of-the-vector-13831719.jpg"><a href="//www.vectorstock.com/royalty-free-vector/constellations-set-twelve-signs-of-the-vector-13831719" title="constellations set twelve signs of the vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/17/19/constellations-set-twelve-signs-of-the-vector-13831719.jpg" title="constellations set twelve signs of the" alt="constellations set twelve signs of the vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/15/46/neon-horoscope-circle-with-signs-of-zodiac-set-vector-22371546.jpg"><a href="//www.vectorstock.com/royalty-free-vector/neon-horoscope-circle-with-signs-of-zodiac-set-vector-22371546" title="neon horoscope circle with signs of zodiac set vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/15/46/neon-horoscope-circle-with-signs-of-zodiac-set-vector-22371546.jpg" title="neon horoscope circle with signs of zodiac set" alt="neon horoscope circle with signs of zodiac set vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/69/37/zodiac-icons-horoscope-set-vector-21786937.jpg"><a href="//www.vectorstock.com/royalty-free-vector/zodiac-icons-horoscope-set-vector-21786937" title="zodiac icons horoscope set vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/69/37/zodiac-icons-horoscope-set-vector-21786937.jpg" title="zodiac icons horoscope set" alt="zodiac icons horoscope set vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/30/88/zodiac-circle-with-star-sign-drawings-and-vector-27183088.jpg"><a href="//www.vectorstock.com/royalty-free-vector/zodiac-circle-with-star-sign-drawings-and-vector-27183088" title="zodiac circle with star sign drawings and vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/30/88/zodiac-circle-with-star-sign-drawings-and-vector-27183088.jpg" title="zodiac circle with star sign drawings and" alt="zodiac circle with star sign drawings and vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/23/82/set-of-colorless-astrology-water-air-earth-and-vector-13622382.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-colorless-astrology-water-air-earth-and-vector-13622382" title="set of colorless astrology water air earth and vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/23/82/set-of-colorless-astrology-water-air-earth-and-vector-13622382.jpg" title="set of colorless astrology water air earth and" alt="set of colorless astrology water air earth and vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/08/52/12-zodiac-signs-constellations-isolated-set-vector-21600852.jpg"><a href="//www.vectorstock.com/royalty-free-vector/12-zodiac-signs-constellations-isolated-set-vector-21600852" title="12 zodiac signs constellations isolated set vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/08/52/12-zodiac-signs-constellations-isolated-set-vector-21600852.jpg" title="12 zodiac signs constellations isolated set" alt="12 zodiac signs constellations isolated set vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/05/13/stars-in-form-of-zodiac-signshoroscope-astronomy-vector-24190513.jpg"><a href="//www.vectorstock.com/royalty-free-vector/stars-in-form-of-zodiac-signshoroscope-astronomy-vector-24190513" title="stars in form of zodiac signshoroscope astronomy vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/05/13/stars-in-form-of-zodiac-signshoroscope-astronomy-vector-24190513.jpg" title="stars in form of zodiac signshoroscope astronomy" alt="stars in form of zodiac signshoroscope astronomy vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/99/51/flat-zodiac-signs-inside-wheel-horoscope-vector-27549951.jpg"><a href="//www.vectorstock.com/royalty-free-vector/flat-zodiac-signs-inside-wheel-horoscope-vector-27549951" title="flat zodiac signs inside wheel horoscope vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/99/51/flat-zodiac-signs-inside-wheel-horoscope-vector-27549951.jpg" title="flat zodiac signs inside wheel horoscope" alt="flat zodiac signs inside wheel horoscope vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/50/93/zodiac-constellation-scorpius-the-scorpion-vector-13605093.jpg"><a href="//www.vectorstock.com/royalty-free-vector/zodiac-constellation-scorpius-the-scorpion-vector-13605093" title="zodiac constellation scorpius the scorpion vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/50/93/zodiac-constellation-scorpius-the-scorpion-vector-13605093.jpg" title="zodiac constellation scorpius the scorpion" alt="zodiac constellation scorpius the scorpion vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/47/84/zodiac-sun-icon-astrology-horoscope-with-signs-vector-23674784.jpg"><a href="//www.vectorstock.com/royalty-free-vector/zodiac-sun-icon-astrology-horoscope-with-signs-vector-23674784" title="zodiac sun icon astrology horoscope with signs vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/47/84/zodiac-sun-icon-astrology-horoscope-with-signs-vector-23674784.jpg" title="zodiac sun icon astrology horoscope with signs" alt="zodiac sun icon astrology horoscope with signs vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/52/04/aquarius-vector-4755204.jpg"><a href="//www.vectorstock.com/royalty-free-vector/aquarius-vector-4755204" title="Aquarius vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/52/04/aquarius-vector-4755204.jpg" title="Aquarius" alt="Aquarius vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/82/95/set-of-horoscope-signs-vector-20978295.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-horoscope-signs-vector-20978295" title="set of horoscope signs vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/82/95/set-of-horoscope-signs-vector-20978295.jpg" title="set of horoscope signs" alt="set of horoscope signs vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/18/18/zodiac-signs-vector-21471818.jpg"><a href="//www.vectorstock.com/royalty-free-vector/zodiac-signs-vector-21471818" title="zodiac signs vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/18/18/zodiac-signs-vector-21471818.jpg" title="zodiac signs" alt="zodiac signs vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/21/08/zodiac-signs-pattern-background-with-vector-26932108.jpg"><a href="//www.vectorstock.com/royalty-free-vector/zodiac-signs-pattern-background-with-vector-26932108" title="zodiac signs pattern background with vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/21/08/zodiac-signs-pattern-background-with-vector-26932108.jpg" title="zodiac signs pattern background with" alt="zodiac signs pattern background with vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/59/69/seamless-pattern-of-zodiac-signs-in-the-style-of-vector-23805969.jpg"><a href="//www.vectorstock.com/royalty-free-vector/seamless-pattern-of-zodiac-signs-in-the-style-of-vector-23805969" title="seamless pattern of zodiac signs in the style of vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/59/69/seamless-pattern-of-zodiac-signs-in-the-style-of-vector-23805969.jpg" title="seamless pattern of zodiac signs in the style of" alt="seamless pattern of zodiac signs in the style of vector image"></noscript></a></li>
+					</ul>
+				</div>
+				<div class="gallery small more">
+					<ul>
+						<li data-id="23455467" data-title="horoscope circle with signs of zodiac" data-src="https://cdn3.vectorstock.com/i/thumbs/54/67/horoscope-circle-with-signs-of-zodiac-vector-23455467.jpg"><a href="//www.vectorstock.com/royalty-free-vector/horoscope-circle-with-signs-of-zodiac-vector-23455467" title="horoscope circle with signs of zodiac vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/54/67/horoscope-circle-with-signs-of-zodiac-vector-23455467.jpg" title="horoscope circle with signs of zodiac" alt="horoscope circle with signs of zodiac vector image"></noscript></a></li>
+						<li data-id="23824901" data-title="set of cat astrology zodiac sign cards" data-src="https://cdn2.vectorstock.com/i/thumbs/49/01/set-of-cat-astrology-zodiac-sign-cards-vector-23824901.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-cat-astrology-zodiac-sign-cards-vector-23824901" title="set of cat astrology zodiac sign cards vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/49/01/set-of-cat-astrology-zodiac-sign-cards-vector-23824901.jpg" title="set of cat astrology zodiac sign cards" alt="set of cat astrology zodiac sign cards vector image"></noscript></a></li>
+						<li data-id="21959759" data-title="zodiac sign" data-src="https://cdn5.vectorstock.com/i/thumbs/97/59/zodiac-sign-vector-21959759.jpg"><a href="//www.vectorstock.com/royalty-free-vector/zodiac-sign-vector-21959759" title="zodiac sign vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/97/59/zodiac-sign-vector-21959759.jpg" title="zodiac sign" alt="zodiac sign vector image"></noscript></a></li>
+						<li data-id="1429594" data-title="Calendar of the zodiac sign Aquarius" data-src="https://cdn5.vectorstock.com/i/thumbs/95/94/calendar-of-the-zodiac-sign-aquarius-vector-1429594.jpg"><a href="//www.vectorstock.com/royalty-free-vector/calendar-of-the-zodiac-sign-aquarius-vector-1429594" title="Calendar of the zodiac sign Aquarius vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/95/94/calendar-of-the-zodiac-sign-aquarius-vector-1429594.jpg" title="Calendar of the zodiac sign Aquarius" alt="Calendar of the zodiac sign Aquarius vector image"></noscript></a></li>
+						<li data-id="12654650" data-title="Aquarius constellation seamless pattern" data-src="https://cdn1.vectorstock.com/i/thumbs/46/50/aquarius-constellation-seamless-pattern-vector-12654650.jpg"><a href="//www.vectorstock.com/royalty-free-vector/aquarius-constellation-seamless-pattern-vector-12654650" title="Aquarius constellation seamless pattern vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/46/50/aquarius-constellation-seamless-pattern-vector-12654650.jpg" title="Aquarius constellation seamless pattern" alt="Aquarius constellation seamless pattern vector image"></noscript></a></li>
+						<li data-id="22502392" data-title="aquarius zodiac sign horoscope symbol blue" data-src="https://cdn3.vectorstock.com/i/thumbs/23/92/aquarius-zodiac-sign-horoscope-symbol-blue-vector-22502392.jpg"><a href="//www.vectorstock.com/royalty-free-vector/aquarius-zodiac-sign-horoscope-symbol-blue-vector-22502392" title="aquarius zodiac sign horoscope symbol blue vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/23/92/aquarius-zodiac-sign-horoscope-symbol-blue-vector-22502392.jpg" title="aquarius zodiac sign horoscope symbol blue" alt="aquarius zodiac sign horoscope symbol blue vector image"></noscript></a></li>
+						<li data-id="22368421" data-title="blue shining cosmic neon zodiac aquarius symbol on" data-src="https://cdn2.vectorstock.com/i/thumbs/84/21/blue-shining-cosmic-neon-zodiac-aquarius-symbol-on-vector-22368421.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blue-shining-cosmic-neon-zodiac-aquarius-symbol-on-vector-22368421" title="blue shining cosmic neon zodiac aquarius symbol on vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/84/21/blue-shining-cosmic-neon-zodiac-aquarius-symbol-on-vector-22368421.jpg" title="blue shining cosmic neon zodiac aquarius symbol on" alt="blue shining cosmic neon zodiac aquarius symbol on vector image"></noscript></a></li>
+						<li data-id="24932245" data-title="the aquarius zodiac symbol in neon style" data-src="https://cdn1.vectorstock.com/i/thumbs/22/45/the-aquarius-zodiac-symbol-in-neon-style-vector-24932245.jpg"><a href="//www.vectorstock.com/royalty-free-vector/the-aquarius-zodiac-symbol-in-neon-style-vector-24932245" title="the aquarius zodiac symbol in neon style vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/22/45/the-aquarius-zodiac-symbol-in-neon-style-vector-24932245.jpg" title="the aquarius zodiac symbol in neon style" alt="the aquarius zodiac symbol in neon style vector image"></noscript></a></li>
+						<li data-id="27373590" data-title="hand drawn aquarius zodiac sign" data-src="https://cdn1.vectorstock.com/i/thumbs/35/90/hand-drawn-aquarius-zodiac-sign-vector-27373590.jpg"><a href="//www.vectorstock.com/royalty-free-vector/hand-drawn-aquarius-zodiac-sign-vector-27373590" title="hand drawn aquarius zodiac sign vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/35/90/hand-drawn-aquarius-zodiac-sign-vector-27373590.jpg" title="hand drawn aquarius zodiac sign" alt="hand drawn aquarius zodiac sign vector image"></noscript></a></li>
+						<li data-id="13492245" data-title="set of zodiac signs" data-src="https://cdn1.vectorstock.com/i/thumbs/22/45/set-of-zodiac-signs-vector-13492245.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-zodiac-signs-vector-13492245" title="set of zodiac signs vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/22/45/set-of-zodiac-signs-vector-13492245.jpg" title="set of zodiac signs" alt="set of zodiac signs vector image"></noscript></a></li>
+						<li data-id="19347953" data-title="aquarius zodiac sign part of zodiacal system" data-src="https://cdn4.vectorstock.com/i/thumbs/79/53/aquarius-zodiac-sign-part-of-zodiacal-system-vector-19347953.jpg"><a href="//www.vectorstock.com/royalty-free-vector/aquarius-zodiac-sign-part-of-zodiacal-system-vector-19347953" title="aquarius zodiac sign part of zodiacal system vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/79/53/aquarius-zodiac-sign-part-of-zodiacal-system-vector-19347953.jpg" title="aquarius zodiac sign part of zodiacal system" alt="aquarius zodiac sign part of zodiacal system vector image"></noscript></a></li>
+						<li data-id="18742335" data-title="aquarius zodiac constellations sign with forest" data-src="https://cdn1.vectorstock.com/i/thumbs/23/35/aquarius-zodiac-constellations-sign-with-forest-vector-18742335.jpg"><a href="//www.vectorstock.com/royalty-free-vector/aquarius-zodiac-constellations-sign-with-forest-vector-18742335" title="aquarius zodiac constellations sign with forest vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/23/35/aquarius-zodiac-constellations-sign-with-forest-vector-18742335.jpg" title="aquarius zodiac constellations sign with forest" alt="aquarius zodiac constellations sign with forest vector image"></noscript></a></li>
+						<li data-id="27019987" data-title="constellation as it can be seen naked eye" data-src="https://cdn3.vectorstock.com/i/thumbs/99/87/constellation-as-it-can-be-seen-naked-eye-vector-27019987.jpg"><a href="//www.vectorstock.com/royalty-free-vector/constellation-as-it-can-be-seen-naked-eye-vector-27019987" title="constellation as it can be seen naked eye vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/99/87/constellation-as-it-can-be-seen-naked-eye-vector-27019987.jpg" title="constellation as it can be seen naked eye" alt="constellation as it can be seen naked eye vector image"></noscript></a></li>
+						<li data-id="2201772" data-title="zodiac" data-src="https://cdn3.vectorstock.com/i/thumbs/17/72/zodiac-vector-2201772.jpg"><a href="//www.vectorstock.com/royalty-free-vector/zodiac-vector-2201772" title="zodiac vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/17/72/zodiac-vector-2201772.jpg" title="zodiac" alt="zodiac vector image"></noscript></a></li>
+						<li data-id="22552885" data-title="astrological zodiac" data-src="https://cdn1.vectorstock.com/i/thumbs/28/85/astrological-zodiac-vector-22552885.jpg"><a href="//www.vectorstock.com/royalty-free-vector/astrological-zodiac-vector-22552885" title="astrological zodiac vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/28/85/astrological-zodiac-vector-22552885.jpg" title="astrological zodiac" alt="astrological zodiac vector image"></noscript></a></li>
+						<li data-id="14098962" data-title="zodiac signs all horoscope constellation stars" data-src="https://cdn3.vectorstock.com/i/thumbs/89/62/zodiac-signs-all-horoscope-constellation-stars-vector-14098962.jpg"><a href="//www.vectorstock.com/royalty-free-vector/zodiac-signs-all-horoscope-constellation-stars-vector-14098962" title="zodiac signs all horoscope constellation stars vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/89/62/zodiac-signs-all-horoscope-constellation-stars-vector-14098962.jpg" title="zodiac signs all horoscope constellation stars" alt="zodiac signs all horoscope constellation stars vector image"></noscript></a></li>
+						<li data-id="27036958" data-title="set stars and constellations starry sky" data-src="https://cdn4.vectorstock.com/i/thumbs/69/58/set-stars-and-constellations-starry-sky-vector-27036958.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-stars-and-constellations-starry-sky-vector-27036958" title="set stars and constellations starry sky vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/69/58/set-stars-and-constellations-starry-sky-vector-27036958.jpg" title="set stars and constellations starry sky" alt="set stars and constellations starry sky vector image"></noscript></a></li>
+						<li data-id="18986399" data-title="golden astrology signs on black background zodiac" data-src="https://cdn5.vectorstock.com/i/thumbs/63/99/golden-astrology-signs-on-black-background-zodiac-vector-18986399.jpg"><a href="//www.vectorstock.com/royalty-free-vector/golden-astrology-signs-on-black-background-zodiac-vector-18986399" title="golden astrology signs on black background zodiac vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/63/99/golden-astrology-signs-on-black-background-zodiac-vector-18986399.jpg" title="golden astrology signs on black background zodiac" alt="golden astrology signs on black background zodiac vector image"></noscript></a></li>
+						<li data-id="17973156" data-title="zodiac icon set sign pattern" data-src="https://cdn2.vectorstock.com/i/thumbs/31/56/zodiac-icon-set-sign-pattern-vector-17973156.jpg"><a href="//www.vectorstock.com/royalty-free-vector/zodiac-icon-set-sign-pattern-vector-17973156" title="zodiac icon set sign pattern vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/31/56/zodiac-icon-set-sign-pattern-vector-17973156.jpg" title="zodiac icon set sign pattern" alt="zodiac icon set sign pattern vector image"></noscript></a></li>
+						<li data-id="24792203" data-title="frame for astrology" data-src="https://cdn4.vectorstock.com/i/thumbs/22/03/frame-for-astrology-vector-24792203.jpg"><a href="//www.vectorstock.com/royalty-free-vector/frame-for-astrology-vector-24792203" title="frame for astrology vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/22/03/frame-for-astrology-vector-24792203.jpg" title="frame for astrology" alt="frame for astrology vector image"></noscript></a></li>
+						<li data-id="23996680" data-title="horoscope and astrology zodiac signs brilliants" data-src="https://cdn1.vectorstock.com/i/thumbs/66/80/horoscope-and-astrology-zodiac-signs-brilliants-vector-23996680.jpg"><a href="//www.vectorstock.com/royalty-free-vector/horoscope-and-astrology-zodiac-signs-brilliants-vector-23996680" title="horoscope and astrology zodiac signs brilliants vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/66/80/horoscope-and-astrology-zodiac-signs-brilliants-vector-23996680.jpg" title="horoscope and astrology zodiac signs brilliants" alt="horoscope and astrology zodiac signs brilliants vector image"></noscript></a></li>
+						<li data-id="23748134" data-title="golden astrology concept with planets isolated on" data-src="https://cdn5.vectorstock.com/i/thumbs/81/34/golden-astrology-concept-with-planets-isolated-on-vector-23748134.jpg"><a href="//www.vectorstock.com/royalty-free-vector/golden-astrology-concept-with-planets-isolated-on-vector-23748134" title="golden astrology concept with planets isolated on vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/81/34/golden-astrology-concept-with-planets-isolated-on-vector-23748134.jpg" title="golden astrology concept with planets isolated on" alt="golden astrology concept with planets isolated on vector image"></noscript></a></li>
+						<li data-id="11786721" data-title="Gold zodiac sign aquarius on black background" data-src="https://cdn2.vectorstock.com/i/thumbs/67/21/gold-zodiac-sign-aquarius-on-black-background-vector-11786721.jpg"><a href="//www.vectorstock.com/royalty-free-vector/gold-zodiac-sign-aquarius-on-black-background-vector-11786721" title="Gold zodiac sign aquarius on black background vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/67/21/gold-zodiac-sign-aquarius-on-black-background-vector-11786721.jpg" title="Gold zodiac sign aquarius on black background" alt="Gold zodiac sign aquarius on black background vector image"></noscript></a></li>
+						<li data-id="20860581" data-title="zodiac circle with horoscope signs sun and moon" data-src="https://cdn2.vectorstock.com/i/thumbs/05/81/zodiac-circle-with-horoscope-signs-sun-and-moon-vector-20860581.jpg"><a href="//www.vectorstock.com/royalty-free-vector/zodiac-circle-with-horoscope-signs-sun-and-moon-vector-20860581" title="zodiac circle with horoscope signs sun and moon vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/05/81/zodiac-circle-with-horoscope-signs-sun-and-moon-vector-20860581.jpg" title="zodiac circle with horoscope signs sun and moon" alt="zodiac circle with horoscope signs sun and moon vector image"></noscript></a></li>
+						<li data-id="12660636" data-title="Aquarius Zodiac Sign Symbol Horoscope" data-src="https://cdn2.vectorstock.com/i/thumbs/06/36/aquarius-zodiac-sign-symbol-horoscope-vector-12660636.jpg"><a href="//www.vectorstock.com/royalty-free-vector/aquarius-zodiac-sign-symbol-horoscope-vector-12660636" title="Aquarius Zodiac Sign Symbol Horoscope vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/06/36/aquarius-zodiac-sign-symbol-horoscope-vector-12660636.jpg" title="Aquarius Zodiac Sign Symbol Horoscope" alt="Aquarius Zodiac Sign Symbol Horoscope vector image"></noscript></a></li>
+						<li data-id="27290793" data-title="zodiac design on watercolor background" data-src="https://cdn4.vectorstock.com/i/thumbs/07/93/zodiac-design-on-watercolor-background-vector-27290793.jpg"><a href="//www.vectorstock.com/royalty-free-vector/zodiac-design-on-watercolor-background-vector-27290793" title="zodiac design on watercolor background vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/07/93/zodiac-design-on-watercolor-background-vector-27290793.jpg" title="zodiac design on watercolor background" alt="zodiac design on watercolor background vector image"></noscript></a></li>
+						<li data-id="25176634" data-title="aquarius zodiac symbolhand drawn in engraving" data-src="https://cdn5.vectorstock.com/i/thumbs/66/34/aquarius-zodiac-symbolhand-drawn-in-engraving-vector-25176634.jpg"><a href="//www.vectorstock.com/royalty-free-vector/aquarius-zodiac-symbolhand-drawn-in-engraving-vector-25176634" title="aquarius zodiac symbolhand drawn in engraving vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/66/34/aquarius-zodiac-symbolhand-drawn-in-engraving-vector-25176634.jpg" title="aquarius zodiac symbolhand drawn in engraving" alt="aquarius zodiac symbolhand drawn in engraving vector image"></noscript></a></li>
+						<li data-id="19070699" data-title="constellation stars zodiac signs in space" data-src="https://cdn5.vectorstock.com/i/thumbs/06/99/constellation-stars-zodiac-signs-in-space-vector-19070699.jpg"><a href="//www.vectorstock.com/royalty-free-vector/constellation-stars-zodiac-signs-in-space-vector-19070699" title="constellation stars zodiac signs in space vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/06/99/constellation-stars-zodiac-signs-in-space-vector-19070699.jpg" title="constellation stars zodiac signs in space" alt="constellation stars zodiac signs in space vector image"></noscript></a></li>
+						<li data-id="6398993" data-title="Astrology sign Aquarius on watercolor background" data-src="https://cdn4.vectorstock.com/i/thumbs/89/93/astrology-sign-aquarius-on-watercolor-background-vector-6398993.jpg"><a href="//www.vectorstock.com/royalty-free-vector/astrology-sign-aquarius-on-watercolor-background-vector-6398993" title="Astrology sign Aquarius on watercolor background vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/89/93/astrology-sign-aquarius-on-watercolor-background-vector-6398993.jpg" title="Astrology sign Aquarius on watercolor background" alt="Astrology sign Aquarius on watercolor background vector image"></noscript></a></li>
+						<li data-id="10780978" data-title="Golden twins Golden zodiac sign Twins zodiac" data-src="https://cdn4.vectorstock.com/i/thumbs/09/78/golden-twins-golden-zodiac-sign-twins-zodiac-vector-10780978.jpg"><a href="//www.vectorstock.com/royalty-free-vector/golden-twins-golden-zodiac-sign-twins-zodiac-vector-10780978" title="Golden twins Golden zodiac sign Twins zodiac vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/09/78/golden-twins-golden-zodiac-sign-twins-zodiac-vector-10780978.jpg" title="Golden twins Golden zodiac sign Twins zodiac" alt="Golden twins Golden zodiac sign Twins zodiac vector image"></noscript></a></li>
+						<li class="more"><div><a href="/royalty-free-vectors/sign-zodiac-aquarius-vectors"><span class="lrg">More Sign Zodiac Aquarius Images…</span><span class="sml">More</span></a></div></li>
+					</ul>
+				</div>
+			</div>
+			<div id="group-artist" class="group">
+				<h6><span class="icon"></span><strong>More by <a href="/royalty-free-vectors/vectors-by_mrFox11" rel="nofollow">mrFox11</a></strong></h6>
+
+				<div class="gallery large">
+					<ul>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/79/65/space-symbol-of-aquarius-of-zodiac-and-horoscope-vector-15117965.jpg"><a href="//www.vectorstock.com/royalty-free-vector/space-symbol-of-aquarius-of-zodiac-and-horoscope-vector-15117965" title="space symbol of aquarius of zodiac and horoscope vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/79/65/space-symbol-of-aquarius-of-zodiac-and-horoscope-vector-15117965.jpg" title="space symbol of aquarius of zodiac and horoscope" alt="space symbol of aquarius of zodiac and horoscope vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/50/67/air-symbol-of-libra-zodiac-sign-horoscope-vector-15135067.jpg"><a href="//www.vectorstock.com/royalty-free-vector/air-symbol-of-libra-zodiac-sign-horoscope-vector-15135067" title="air symbol of libra zodiac sign horoscope vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/50/67/air-symbol-of-libra-zodiac-sign-horoscope-vector-15135067.jpg" title="air symbol of libra zodiac sign horoscope" alt="air symbol of libra zodiac sign horoscope vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/50/60/air-symbol-of-gemini-zodiac-sign-horoscope-vector-15135060.jpg"><a href="//www.vectorstock.com/royalty-free-vector/air-symbol-of-gemini-zodiac-sign-horoscope-vector-15135060" title="air symbol of gemini zodiac sign horoscope vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/50/60/air-symbol-of-gemini-zodiac-sign-horoscope-vector-15135060.jpg" title="air symbol of gemini zodiac sign horoscope" alt="air symbol of gemini zodiac sign horoscope vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/50/64/fire-symbol-of-leo-zodiac-sign-horoscope-vector-15135064.jpg"><a href="//www.vectorstock.com/royalty-free-vector/fire-symbol-of-leo-zodiac-sign-horoscope-vector-15135064" title="fire symbol of leo zodiac sign horoscope vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/50/64/fire-symbol-of-leo-zodiac-sign-horoscope-vector-15135064.jpg" title="fire symbol of leo zodiac sign horoscope" alt="fire symbol of leo zodiac sign horoscope vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/50/82/water-symbol-of-pisces-zodiac-sign-horoscope-vector-15135082.jpg"><a href="//www.vectorstock.com/royalty-free-vector/water-symbol-of-pisces-zodiac-sign-horoscope-vector-15135082" title="water symbol of pisces zodiac sign horoscope vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/50/82/water-symbol-of-pisces-zodiac-sign-horoscope-vector-15135082.jpg" title="water symbol of pisces zodiac sign horoscope" alt="water symbol of pisces zodiac sign horoscope vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/50/57/earth-symbol-of-taurus-zodiac-sign-horoscope-vector-15135057.jpg"><a href="//www.vectorstock.com/royalty-free-vector/earth-symbol-of-taurus-zodiac-sign-horoscope-vector-15135057" title="earth symbol of taurus zodiac sign horoscope vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/50/57/earth-symbol-of-taurus-zodiac-sign-horoscope-vector-15135057.jpg" title="earth symbol of taurus zodiac sign horoscope" alt="earth symbol of taurus zodiac sign horoscope vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/50/62/water-symbol-of-cancer-zodiac-sign-horoscope-vector-15135062.jpg"><a href="//www.vectorstock.com/royalty-free-vector/water-symbol-of-cancer-zodiac-sign-horoscope-vector-15135062" title="water symbol of cancer zodiac sign horoscope vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/50/62/water-symbol-of-cancer-zodiac-sign-horoscope-vector-15135062.jpg" title="water symbol of cancer zodiac sign horoscope" alt="water symbol of cancer zodiac sign horoscope vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/50/74/fire-symbol-of-sagittarius-zodiac-sign-horoscope-vector-15135074.jpg"><a href="//www.vectorstock.com/royalty-free-vector/fire-symbol-of-sagittarius-zodiac-sign-horoscope-vector-15135074" title="fire symbol of sagittarius zodiac sign horoscope vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/50/74/fire-symbol-of-sagittarius-zodiac-sign-horoscope-vector-15135074.jpg" title="fire symbol of sagittarius zodiac sign horoscope" alt="fire symbol of sagittarius zodiac sign horoscope vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/50/65/earth-symbol-of-virgo-zodiac-sign-horoscope-vector-15135065.jpg"><a href="//www.vectorstock.com/royalty-free-vector/earth-symbol-of-virgo-zodiac-sign-horoscope-vector-15135065" title="earth symbol of virgo zodiac sign horoscope vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/50/65/earth-symbol-of-virgo-zodiac-sign-horoscope-vector-15135065.jpg" title="earth symbol of virgo zodiac sign horoscope" alt="earth symbol of virgo zodiac sign horoscope vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/52/77/secret-symbol-of-ophiuchus-zodiac-sign-horoscope-vector-15205277.jpg"><a href="//www.vectorstock.com/royalty-free-vector/secret-symbol-of-ophiuchus-zodiac-sign-horoscope-vector-15205277" title="secret symbol of ophiuchus zodiac sign horoscope vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/52/77/secret-symbol-of-ophiuchus-zodiac-sign-horoscope-vector-15205277.jpg" title="secret symbol of ophiuchus zodiac sign horoscope" alt="secret symbol of ophiuchus zodiac sign horoscope vector image"></noscript></a></li>
+					</ul>
+				</div>
+				<div class="gallery small more">
+					<ul>
+						<li data-id="15135056" data-title="fire symbol of aries zodiac sign horoscope" data-src="https://cdn2.vectorstock.com/i/thumbs/50/56/fire-symbol-of-aries-zodiac-sign-horoscope-vector-15135056.jpg"><a href="//www.vectorstock.com/royalty-free-vector/fire-symbol-of-aries-zodiac-sign-horoscope-vector-15135056" title="fire symbol of aries zodiac sign horoscope vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/50/56/fire-symbol-of-aries-zodiac-sign-horoscope-vector-15135056.jpg" title="fire symbol of aries zodiac sign horoscope" alt="fire symbol of aries zodiac sign horoscope vector image vector image"></noscript></a></li>
+						<li data-id="15135076" data-title="earth symbol of capricorn zodiac sign horoscope" data-src="https://cdn2.vectorstock.com/i/thumbs/50/76/earth-symbol-of-capricorn-zodiac-sign-horoscope-vector-15135076.jpg"><a href="//www.vectorstock.com/royalty-free-vector/earth-symbol-of-capricorn-zodiac-sign-horoscope-vector-15135076" title="earth symbol of capricorn zodiac sign horoscope vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/50/76/earth-symbol-of-capricorn-zodiac-sign-horoscope-vector-15135076.jpg" title="earth symbol of capricorn zodiac sign horoscope" alt="earth symbol of capricorn zodiac sign horoscope vector image vector image"></noscript></a></li>
+						<li data-id="15135072" data-title="water symbol of scorpio zodiac sign horoscope" data-src="https://cdn3.vectorstock.com/i/thumbs/50/72/water-symbol-of-scorpio-zodiac-sign-horoscope-vector-15135072.jpg"><a href="//www.vectorstock.com/royalty-free-vector/water-symbol-of-scorpio-zodiac-sign-horoscope-vector-15135072" title="water symbol of scorpio zodiac sign horoscope vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/50/72/water-symbol-of-scorpio-zodiac-sign-horoscope-vector-15135072.jpg" title="water symbol of scorpio zodiac sign horoscope" alt="water symbol of scorpio zodiac sign horoscope vector image vector image"></noscript></a></li>
+						<li data-id="16816943" data-title="light symbols of zodiac and horoscope astrology" data-src="https://cdn4.vectorstock.com/i/thumbs/69/43/light-symbols-of-zodiac-and-horoscope-astrology-vector-16816943.jpg"><a href="//www.vectorstock.com/royalty-free-vector/light-symbols-of-zodiac-and-horoscope-astrology-vector-16816943" title="light symbols of zodiac and horoscope astrology vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/69/43/light-symbols-of-zodiac-and-horoscope-astrology-vector-16816943.jpg" title="light symbols of zodiac and horoscope astrology" alt="light symbols of zodiac and horoscope astrology vector image vector image"></noscript></a></li>
+						<li data-id="14804317" data-title="beautiful woman on the cosmic sky" data-src="https://cdn3.vectorstock.com/i/thumbs/43/17/beautiful-woman-on-the-cosmic-sky-vector-14804317.jpg"><a href="//www.vectorstock.com/royalty-free-vector/beautiful-woman-on-the-cosmic-sky-vector-14804317" title="beautiful woman on the cosmic sky vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/43/17/beautiful-woman-on-the-cosmic-sky-vector-14804317.jpg" title="beautiful woman on the cosmic sky" alt="beautiful woman on the cosmic sky vector image vector image"></noscript></a></li>
+						<li data-id="15205268" data-title="space symbol of ophiuchus of zodiac and horoscope" data-src="https://cdn4.vectorstock.com/i/thumbs/52/68/space-symbol-of-ophiuchus-of-zodiac-and-horoscope-vector-15205268.jpg"><a href="//www.vectorstock.com/royalty-free-vector/space-symbol-of-ophiuchus-of-zodiac-and-horoscope-vector-15205268" title="space symbol of ophiuchus of zodiac and horoscope vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/52/68/space-symbol-of-ophiuchus-of-zodiac-and-horoscope-vector-15205268.jpg" title="space symbol of ophiuchus of zodiac and horoscope" alt="space symbol of ophiuchus of zodiac and horoscope vector image vector image"></noscript></a></li>
+						<li data-id="15106406" data-title="space symbol of virgo of zodiac and horoscope" data-src="https://cdn2.vectorstock.com/i/thumbs/64/06/space-symbol-of-virgo-of-zodiac-and-horoscope-vector-15106406.jpg"><a href="//www.vectorstock.com/royalty-free-vector/space-symbol-of-virgo-of-zodiac-and-horoscope-vector-15106406" title="space symbol of virgo of zodiac and horoscope vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/64/06/space-symbol-of-virgo-of-zodiac-and-horoscope-vector-15106406.jpg" title="space symbol of virgo of zodiac and horoscope" alt="space symbol of virgo of zodiac and horoscope vector image vector image"></noscript></a></li>
+						<li data-id="15117958" data-title="space symbol of scorpio of zodiac and horoscope" data-src="https://cdn4.vectorstock.com/i/thumbs/79/58/space-symbol-of-scorpio-of-zodiac-and-horoscope-vector-15117958.jpg"><a href="//www.vectorstock.com/royalty-free-vector/space-symbol-of-scorpio-of-zodiac-and-horoscope-vector-15117958" title="space symbol of scorpio of zodiac and horoscope vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/79/58/space-symbol-of-scorpio-of-zodiac-and-horoscope-vector-15117958.jpg" title="space symbol of scorpio of zodiac and horoscope" alt="space symbol of scorpio of zodiac and horoscope vector image vector image"></noscript></a></li>
+						<li data-id="15106401" data-title="space symbol of cancer of zodiac and horoscope" data-src="https://cdn2.vectorstock.com/i/thumbs/64/01/space-symbol-of-cancer-of-zodiac-and-horoscope-vector-15106401.jpg"><a href="//www.vectorstock.com/royalty-free-vector/space-symbol-of-cancer-of-zodiac-and-horoscope-vector-15106401" title="space symbol of cancer of zodiac and horoscope vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/64/01/space-symbol-of-cancer-of-zodiac-and-horoscope-vector-15106401.jpg" title="space symbol of cancer of zodiac and horoscope" alt="space symbol of cancer of zodiac and horoscope vector image vector image"></noscript></a></li>
+						<li data-id="15106400" data-title="space symbol of gemini of zodiac and horoscope" data-src="https://cdn1.vectorstock.com/i/thumbs/64/00/space-symbol-of-gemini-of-zodiac-and-horoscope-vector-15106400.jpg"><a href="//www.vectorstock.com/royalty-free-vector/space-symbol-of-gemini-of-zodiac-and-horoscope-vector-15106400" title="space symbol of gemini of zodiac and horoscope vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/64/00/space-symbol-of-gemini-of-zodiac-and-horoscope-vector-15106400.jpg" title="space symbol of gemini of zodiac and horoscope" alt="space symbol of gemini of zodiac and horoscope vector image vector image"></noscript></a></li>
+						<li data-id="15106398" data-title="space symbol of aries of zodiac and horoscope" data-src="https://cdn4.vectorstock.com/i/thumbs/63/98/space-symbol-of-aries-of-zodiac-and-horoscope-vector-15106398.jpg"><a href="//www.vectorstock.com/royalty-free-vector/space-symbol-of-aries-of-zodiac-and-horoscope-vector-15106398" title="space symbol of aries of zodiac and horoscope vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/63/98/space-symbol-of-aries-of-zodiac-and-horoscope-vector-15106398.jpg" title="space symbol of aries of zodiac and horoscope" alt="space symbol of aries of zodiac and horoscope vector image vector image"></noscript></a></li>
+						<li data-id="15117971" data-title="space symbol of pisces of zodiac and horoscope" data-src="https://cdn2.vectorstock.com/i/thumbs/79/71/space-symbol-of-pisces-of-zodiac-and-horoscope-vector-15117971.jpg"><a href="//www.vectorstock.com/royalty-free-vector/space-symbol-of-pisces-of-zodiac-and-horoscope-vector-15117971" title="space symbol of pisces of zodiac and horoscope vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/79/71/space-symbol-of-pisces-of-zodiac-and-horoscope-vector-15117971.jpg" title="space symbol of pisces of zodiac and horoscope" alt="space symbol of pisces of zodiac and horoscope vector image vector image"></noscript></a></li>
+						<li data-id="15106399" data-title="space symbol of taurus of zodiac and horoscope" data-src="https://cdn5.vectorstock.com/i/thumbs/63/99/space-symbol-of-taurus-of-zodiac-and-horoscope-vector-15106399.jpg"><a href="//www.vectorstock.com/royalty-free-vector/space-symbol-of-taurus-of-zodiac-and-horoscope-vector-15106399" title="space symbol of taurus of zodiac and horoscope vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/63/99/space-symbol-of-taurus-of-zodiac-and-horoscope-vector-15106399.jpg" title="space symbol of taurus of zodiac and horoscope" alt="space symbol of taurus of zodiac and horoscope vector image vector image"></noscript></a></li>
+						<li data-id="15117963" data-title="space symbol of capricorn of zodiac and horoscope" data-src="https://cdn4.vectorstock.com/i/thumbs/79/63/space-symbol-of-capricorn-of-zodiac-and-horoscope-vector-15117963.jpg"><a href="//www.vectorstock.com/royalty-free-vector/space-symbol-of-capricorn-of-zodiac-and-horoscope-vector-15117963" title="space symbol of capricorn of zodiac and horoscope vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/79/63/space-symbol-of-capricorn-of-zodiac-and-horoscope-vector-15117963.jpg" title="space symbol of capricorn of zodiac and horoscope" alt="space symbol of capricorn of zodiac and horoscope vector image vector image"></noscript></a></li>
+						<li data-id="15106404" data-title="space symbol of leo of zodiac and horoscope" data-src="https://cdn5.vectorstock.com/i/thumbs/64/04/space-symbol-of-leo-of-zodiac-and-horoscope-vector-15106404.jpg"><a href="//www.vectorstock.com/royalty-free-vector/space-symbol-of-leo-of-zodiac-and-horoscope-vector-15106404" title="space symbol of leo of zodiac and horoscope vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/64/04/space-symbol-of-leo-of-zodiac-and-horoscope-vector-15106404.jpg" title="space symbol of leo of zodiac and horoscope" alt="space symbol of leo of zodiac and horoscope vector image vector image"></noscript></a></li>
+						<li data-id="15117960" data-title="space symbol of sagittarius of zodiac and" data-src="https://cdn1.vectorstock.com/i/thumbs/79/60/space-symbol-of-sagittarius-of-zodiac-and-vector-15117960.jpg"><a href="//www.vectorstock.com/royalty-free-vector/space-symbol-of-sagittarius-of-zodiac-and-vector-15117960" title="space symbol of sagittarius of zodiac and vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/79/60/space-symbol-of-sagittarius-of-zodiac-and-vector-15117960.jpg" title="space symbol of sagittarius of zodiac and" alt="space symbol of sagittarius of zodiac and vector image vector image"></noscript></a></li>
+						<li data-id="15106409" data-title="space symbol of libra of zodiac and horoscope" data-src="https://cdn5.vectorstock.com/i/thumbs/64/09/space-symbol-of-libra-of-zodiac-and-horoscope-vector-15106409.jpg"><a href="//www.vectorstock.com/royalty-free-vector/space-symbol-of-libra-of-zodiac-and-horoscope-vector-15106409" title="space symbol of libra of zodiac and horoscope vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/64/09/space-symbol-of-libra-of-zodiac-and-horoscope-vector-15106409.jpg" title="space symbol of libra of zodiac and horoscope" alt="space symbol of libra of zodiac and horoscope vector image vector image"></noscript></a></li>
+						<li data-id="18074899" data-title="zodiac signs for astrology simple set of icons" data-src="https://cdn5.vectorstock.com/i/thumbs/48/99/zodiac-signs-for-astrology-simple-set-of-icons-vector-18074899.jpg"><a href="//www.vectorstock.com/royalty-free-vector/zodiac-signs-for-astrology-simple-set-of-icons-vector-18074899" title="zodiac signs for astrology simple set of icons vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/48/99/zodiac-signs-for-astrology-simple-set-of-icons-vector-18074899.jpg" title="zodiac signs for astrology simple set of icons" alt="zodiac signs for astrology simple set of icons vector image vector image"></noscript></a></li>
+						<li data-id="17974291" data-title="zodiac flat buttons icon set separated by" data-src="https://cdn2.vectorstock.com/i/thumbs/42/91/zodiac-flat-buttons-icon-set-separated-by-vector-17974291.jpg"><a href="//www.vectorstock.com/royalty-free-vector/zodiac-flat-buttons-icon-set-separated-by-vector-17974291" title="zodiac flat buttons icon set separated by vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/42/91/zodiac-flat-buttons-icon-set-separated-by-vector-17974291.jpg" title="zodiac flat buttons icon set separated by" alt="zodiac flat buttons icon set separated by vector image vector image"></noscript></a></li>
+						<li data-id="18089409" data-title="zodiac signs for astrology element set of icons" data-src="https://cdn5.vectorstock.com/i/thumbs/94/09/zodiac-signs-for-astrology-element-set-of-icons-vector-18089409.jpg"><a href="//www.vectorstock.com/royalty-free-vector/zodiac-signs-for-astrology-element-set-of-icons-vector-18089409" title="zodiac signs for astrology element set of icons vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/94/09/zodiac-signs-for-astrology-element-set-of-icons-vector-18089409.jpg" title="zodiac signs for astrology element set of icons" alt="zodiac signs for astrology element set of icons vector image vector image"></noscript></a></li>
+						<li class="more"><div><a href="/royalty-free-vectors/vectors-by_mrFox11" rel="nofollow"><span class="lrg">More Images…</span><span class="sml">More</span></a></div></li>
+					</ul>
+				</div>
+			</div>
+			<div id="group-keywords" class="group">
+				<h6><span class="icon"></span><strong>Related Searches</strong></h6>
+				<ul>
+					<li><a href="/royalty-free-vectors/sign-vectors">Sign</a></li>
+					<li><a href="/royalty-free-vectors/zodiac-vectors">Zodiac</a></li>
+					<li><a href="/royalty-free-vectors/aquarius-vectors">Aquarius</a></li>
+					<li><a href="/royalty-free-vectors/horoscope-vectors">Horoscope</a></li>
+					<li><a href="/royalty-free-vectors/symbol-vectors">Symbol</a></li>
+					<li><a href="/royalty-free-vectors/constellation-vectors">Constellation</a></li>
+					<li><a href="/royalty-free-vectors/air-vectors">Air</a></li>
+					<li><a href="/royalty-free-vectors/night-vectors">Night</a></li>
+					<li><a href="/royalty-free-vectors/sky-vectors">Sky</a></li>
+					<li><a href="/royalty-free-vectors/star-vectors">Star</a></li>
+					<li><a href="/royalty-free-vectors/abstract-vectors">Abstract</a></li>
+					<li><a href="/royalty-free-vectors/design-vectors">Design</a></li>
+					<li><a href="/royalty-free-vectors/astrology-vectors">Astrology</a></li>
+					<li><a href="/royalty-free-vectors/astronomy-vectors">Astronomy</a></li>
+					<li><a href="/royalty-free-vectors/future-vectors">Future</a></li>
+					<li><a href="/royalty-free-vectors/calendar-vectors">Calendar</a></li>
+					<li><a href="/royalty-free-vectors/fortune-vectors">Fortune</a></li>
+					<li><a href="/royalty-free-vectors/icon-vectors">Icon</a></li>
+					<li><a href="/royalty-free-vectors/glow-vectors">Glow</a></li>
+					<li><a href="/royalty-free-vectors/style-vectors">Style</a></li>
+					<li><a href="/royalty-free-vectors/element-vectors">Element</a></li>
+					<li><a href="/royalty-free-vectors/fantasy-vectors">Fantasy</a></li>
+					<li><a href="/royalty-free-vectors/luck-vectors">Luck</a></li>
+					<li><a href="/royalty-free-vectors/space-vectors">Space</a></li>
+					<li><a href="/royalty-free-vectors/beauty-vectors">Beauty</a></li>
+					<li><a href="/royalty-free-vectors/mythology-vectors">Mythology</a></li>
+					<li><a href="/royalty-free-vectors/silhouette-vectors">Silhouette</a></li>
+					<li><a href="/royalty-free-vectors/light-vectors">Light</a></li>
+					<li><a href="/royalty-free-vectors/modern-vectors">Modern</a></li>
+					<li><a href="/royalty-free-vectors/astronomical-vectors">Astronomical</a></li>
+				</ul>
+			</div>
+		</section>
+	</article>
+
+	<!-- Footer -->
+	<footer>
+
+		<div>
+		<div class="column c1">
+			<nav class="company">
+				<h4>VectorStock</h4>
+				<ul>
+					<li><a href="/" title="Home">Home</a></li>
+					<li class="sel"><a href="/free-vectors" title="Free Vectors">Free Vectors</a></li>
+					<li class="sel"><a href="/royalty-free-vectors" title="All Royalty-Free Vectors">All Vectors</a></li>
+				</ul>
+				<ul>
+					<li><a href="/what-is-a-vector" title="What is a Vector?">What is a Vector?</a></li>
+				</ul>
+				<ul>
+					<li class="sel"><a href="/faq" title="Frequently Asked Questions"><span class="long">Frequently Asked Questions</span><span class="short">FAQs</span></a></li>
+					<li><a href="/faq/members/terms-of-use" title="Terms &amp; Conditions">Terms &amp; Conditions</a></li>
+					<li class="sel"><a href="/contact" title="Contact Us">Contact Us</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="column c2">
+			<nav class="account">
+					<h4><span class="title">Account</span><span class="icon"></span></h4>
+					<ul>
+						<li><a href="/signup" title="Join Now">Join Now</a></li>
+						<li><a href="/account/sell-vectors" title="Become a VectorStock Contributor">Contributor Sign Up</a></li>
+						<li><a href="/faq/artists/why-sell-at-vectorstock" title="Contributor FAQ">Contributor FAQ</a></li>
+					</ul>
+			</nav>
+		</div>
+		<div class="column c3">
+			<nav class="social">
+				<h4>Social</h4>
+				<ul>
+					<li class="facebook sel"><a href="http://www.facebook.com/VectorStock" target="_blank"><span class="title">Facebook</span><span class="icon"></span></a></li>
+					<li class="pinterest sel"><a href="http://pinterest.com/vectorstock/" target="_blank"><span class="title">Pinterest</span><span class="icon"></span></a></li>
+					<li class="twitter sel"><a href="https://twitter.com/VectorStock" target="_blank"><span class="title">Twitter</span><span class="icon"></span></a></li>
+				</ul>
+			</nav>
+			<div class="signoff">
+				<h5><a href="https://www.vectorstock.com/" title="VectorStock®">VectorStock®</a></h5>
+				<p>VectorStock and the VectorStock logo are registered trademarks of VectorStock Media.<br>
+				© 2019. <span>All Rights Reserved.</span></p>
+			</div>
+		</div>
+	</div></footer>
+
+
+	<script src="//www.googleadservices.com/pagead/conversion_async.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"02e09611df","applicationID":"156179534","transactionName":"ZV0ENRYCC0RYAkVbDVwXJRQXFwpaFhNeSwNeTB9MAhEAUhQXVFEWXUpJFw0GEg==","queueTime":0,"applicationTime":44,"atts":"SRoHQ14YGEo=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+</body>
+</html>
