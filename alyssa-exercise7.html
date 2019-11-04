@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div class="header">
+</div>
+<section id="container">
+    <ul>
+        <li class="first">one</li>
+        <li class="second">two</li>
+        <li class="third">three</li>
+    </ul>
+    <ol>
+        <li class="first">one</li>
+        <li class="second">two</li>
+        <li class="third">three</li>
+    </ol>
+</section>
+<div class="footer">
+    <h1>Hello</h1>
+</div>
+
+
+<script>
+    "use strict";
+    // https://www.rithmschool.com/courses/intermediate-javascript/javascript-dom-exercises
+    // Write the code necessary to do the following:
+    //
+    // Select the section with an id of container without using querySelector.
+    // Select the section with an id of container using querySelector.
+    // Select all of the list items with a class of "second".
+    // Select a list item with a class of third, but only the list item inside of the ol tag.
+    // Give the section with an id of container the text "Hello!".
+    // Add the class main to the div with a class of footer.
+    // Remove the class main on the div with a class of footer.
+    // Create a new li element.
+    // Give the li the text "four".
+    // Append the li to the ul element.
+    // Loop over all of the lis inside the ol tag and give them a background color of "green".
+    // Remove the div with a class of footer.
+
+    console.log(document.getElementById('container'));
+    console.log(document.querySelector('#container'));
+    console.log(document.getElementsByClassName('second'));
+    console.log(document.querySelector("ol .third"));
+    // document.getElementById('container').innerText = "Hello!";
+    document.querySelector(".footer").classList.add("main");
+    document.querySelector(".footer").classList.remove("main");
+    var newLi = document.createElement("li");
+    newLi.innerText = "four";
+    document.getElementsByTagName('ul')[0].appendChild(newLi);
+
+    var orderedList = document.querySelector("ol");
+    var liElements = orderedList.getElementsByTagName('li');
+    for (var i = 0; i < liElements.length; i++){
+        liElements[i].style.backgroundColor = "green";
+    }
+</script>
+</body>
+</html>
